@@ -22,8 +22,8 @@ CREATE TABLE IF NOT EXISTS matches(
     ID_visiting_team INT NOT NULL,
     goals_host_team INT NOT NULL DEFAULT 0,
     goals_visiting_team INT NOT NULL DEFAULT 0,
-    CONSTRAINT FK_id_host_team_match FOREIGN KEY (ID_team) REFERENCES teams (ID) ON DELETE CASCADE,
-    CONSTRAINT FK_id_visiting_team_match FOREIGN KEY (ID_team) REFERENCES teams (ID) ON DELETE CASCADE
+    CONSTRAINT FK_id_host_team_match FOREIGN KEY (ID_host_team) REFERENCES teams (ID) ON DELETE CASCADE,
+    CONSTRAINT FK_id_visiting_team_match FOREIGN KEY (ID_visiting_team) REFERENCES teams (ID) ON DELETE CASCADE
 );
 
 CREATE TABLE goals (
