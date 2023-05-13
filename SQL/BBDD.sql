@@ -35,19 +35,3 @@ CREATE TABLE goals (
     CONSTRAINT FK_id_player_goals FOREIGN KEY (ID_player) REFERENCES players (ID) ON DELETE CASCADE
 );
 
-CREATE OR REPLACE VIEW player_goals_count AS
-SELECT p.ID AS player_id, CONCAT(p.name, ' ', p.lastname) AS player_name, COUNT(g.ID) AS total_goals
-FROM players p
-LEFT JOIN goals g ON p.ID = g.ID_player
-GROUP BY p.ID, player_name;
-
-CREATE OR REPLACE VIEW team_points_count AS
-SELECT t.ID AS team_id, t.name AS team_name,
-    SUM(CASE
-        WHEN m.goals_host_team > m.goals_visiting_team THEN 3
-        WHEN m.goals_host_team = m.goals_visiting_team THEN 1
-        ELSE 0
-    END) AS total_points
-FROM teams t
-LEFT JOIN matches m ON t.ID = m.ID_host_team OR t.ID = m.ID_visiting_team
-GROUP BY t.ID, team_name;

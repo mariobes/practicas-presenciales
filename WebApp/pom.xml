@@ -74,7 +74,7 @@
                     <configuration>
                         <url>http://localhost:8081/manager/text</url>
                         <server>tomcat10</server>
-                        <path>/webapp</path>
+                        <path>/futbol</path>
                         <username>tomcat</username>
                         <password>tomcat</password>
                     </configuration>
