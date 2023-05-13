@@ -9,7 +9,7 @@ Nuestra aplicación te brinda acceso instantáneo a una amplia base de datos que
 
 Características destacadas de Football Stars App:
 
-- Perfiles completos de jugadores: Descubre información detallada sobre cada futbolista, incluyendo su trayectoria profesional, posición en el campo, y goles totales.
+- Perfiles completos de jugadores: Descubre información detallada sobre cada futbolista, incluyendo su trayectoria profesional y posición en el campo.
 
 - Seguimiento de equipos: Selecciona tus equipos favoritos y mantente al tanto de todos los jugadores que forman parte de ellos.
 
