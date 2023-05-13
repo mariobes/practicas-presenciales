@@ -14,27 +14,50 @@
 
 <%@include file="includes/header.jsp"%>
 
+<script>
+$(document).ready(function() {
+  $("a[href^='remove-team'],a[href^='remove-player']").click(function(event) {
+    event.preventDefault();
+    var url = $(this).attr("href");
+    var message = $(this).attr("data-message");
+    if (typeof message === "undefined") {
+      message = "¿Are you sure you want to delete?";
+    }
+    if (confirm(message)) {
+      window.location.href = url;
+    }
+  });
+
+});
+
+
+
+</script>
+
+
+
+
 
 <main>
 
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Aplicación para gestionar Jugadores y equipos</h1>
-        <p class="lead text-body-secondary">Esta aplicación te va a permitir modificar, añadir y buscar los equipos y jugadores que desees</p>
+        <h1 class="fw-light">Application to manage players and teams</h1>
+        <p class="lead text-body-secondary">This application will allow you to modify, add, delete and search for the teams and players you want</p>
         <p>
-          <a href="team-form.jsp?action=register" class="btn btn-primary my-2">Register team</a>
-          <a href="player-form.jsp?action=register" class="btn btn-secondary my-2">Registrar Jugador</a>
+          <a href="team-form.jsp?action=register" class="btn btn-primary my-2">Register Team</a>
+          <a href="player-form.jsp?action=register" class="btn btn-secondary my-2">Register Player</a>
 
 
         <p>
         <form action="searchTeam" method="post" class="form-inline mt-2 mt-md-0">
                     <input class="form-control mr-sm-2" name="search" method="post" type="text" id="search" placeholder="Search a team" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">BUSCAR</button>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
          <form action="searchPlayer" method="post" class="form-inline mt-2 mt-md-0">
                              <input class="form-control mr-sm-2" name="search" method="post" type="text" id="search" placeholder="Search a player" aria-label="Search">
-                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">BUSCAR</button>
+                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                              </form>
 
           </p>
@@ -45,10 +68,10 @@
   </section>
 
 
-  <section class="especie1">
+  <section class="team">
 
-     <h1 class="enca1">TEAMS</h1>
-     <div class="container-especie">
+     <h1 class="thead">TEAMS</h1>
+     <div class="container-team">
 
 
             <%
@@ -61,19 +84,19 @@
             %>
 
 
-            <div class="especies1">
+            <div class="teams">
             <div class= "info">
           <p><%= teams.getTName()%></p>
-           <span class= "">Stadium= <%=teams.getStadium()%></span>
+           <span class= ""> <%=teams.getStadium()%></span>
            </div>
           <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group pl">
           <a href="view-details.jsp?id=<%=teams.getIdTeam()%>" class="btn btn-sm btn-outline-dark">View details</a>
 
 
-            <a href="remove-team?id=<%=teams.getIdTeam()%>" class="btn btn-sm btn-outline-danger"  onclick="return eliminacion()">Delete</a>
+            <a href="remove-team?id=<%=teams.getIdTeam()%>" class="btn btn-sm btn-outline-danger">Delete</a>
                                     </div>
-                                    <p class="extincion">City: <%=teams.getCity()%></p>
+                                    <p class="idteam">ID: <%=teams.getIdTeam()%></p>
                                   </div>
                                 </div>
 
@@ -85,9 +108,9 @@
                        </section>
 
 
-      <section class= "especie1">
-            <h1 class= "enca1">Players</h1>
-               <div class="container-especie">
+      <section class= "player">
+            <h1 class= "thead">PLAYERS</h1>
+               <div class="container-team">
 
 
               <%
@@ -97,12 +120,12 @@
 
               %>
 
-             <div class="especies1">
+             <div class="teams">
 
 
                  <div class="info">
                   <p><%= player.getPName()%>  <%=player.getLastname()%></p>
-                     <span class= "">Position= <%=player.getPosition()%></span>
+                     <span class= ""> <%=player.getPosition()%></span>
                  </div>
 
                 <div class="d-flex justify-content-between align-items-center">
@@ -112,7 +135,7 @@
 
                    <a href="remove-player?id=<%=player.getIdPlayer()%>" class="btn btn-sm btn-outline-danger">Remove</a>
                  </div>
-                <p class="extincion">Team: <%=player.getTeam().getTName()%></p>
+                <p class="idteam"><%=player.getTeam().getTName()%></p>
                 </div>
                </div>
 
