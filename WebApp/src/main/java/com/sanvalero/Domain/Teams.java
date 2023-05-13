@@ -1,4 +1,4 @@
-package Domain;
+package com.sanvalero.Domain;
 import lombok.*;
 
 @Data
