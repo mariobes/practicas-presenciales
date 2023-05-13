@@ -1,3 +1,4 @@
+https://trello.com/invite/b/wxrSZyF2/ATTI1f62e1207860b75b101e21df70db0acd17D287DB/football-app
 # Football Stars App
 Integrantes del grupo: Alberto Salas, Alberto Riveiro, Mario Bes
 
