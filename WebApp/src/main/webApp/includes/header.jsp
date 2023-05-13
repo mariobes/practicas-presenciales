@@ -9,12 +9,12 @@
     <%@page contentType="text/html"%>
     <%@page pageEncoding="UTF-8"%>
 
-    <title>Taller zoológico</title>
+    <title>Football League</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Favicons -->
 <meta name="theme-color" content="#712cf9">
@@ -218,6 +218,7 @@
                            padding: 0.5rem 0.3rem;
                            border-radius: 3px;
                            font-weight: bold;
+                           font-size:18px;
                        }
 
                        .container-details .resume{
@@ -252,7 +253,42 @@
                         color: red;
                        }
 
+                       .player{
+                       background-color: #1E30B4;
+                       padding-top: 40px;
+                       padding-bottom: 40px;
 
+                      }
+
+                      .player .thead{
+                        color: #fff;
+                         text-align: center;
+                         font-size: 35px;
+                         padding-bottom: 30px;
+                     }
+
+                    .blue{
+                   background-color: #1E30B4;
+                   height: 660px !important;
+                   }
+
+
+                @media (max-width: 640px){
+
+                .team .thead{
+                font-size:28px;
+
+                }
+                .container-team{
+                padding-top: 10px;
+                }
+
+                 .player .thead{
+                 font-size:28px;
+
+                }
+
+                }
 
 
 
@@ -276,7 +312,6 @@
         <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
       </symbol>
     </svg>
-
     <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
       <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
               id="bd-theme"
