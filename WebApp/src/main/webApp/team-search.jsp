@@ -14,7 +14,7 @@
 <body>
 <div class="container">
 
-       <h1>Equipo</h1>
+       <h1>Teams</h1>
           <table class="table">
               <thread>
                 <tr>
